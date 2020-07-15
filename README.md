@@ -1,2 +1,2 @@
 # omnifood_website
-Website created by nishant venugopal
+## This was a website created by Nishant Venugopal. 
