@@ -2,6 +2,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 *:focus{outline: none;}
@@ -29,6 +30,7 @@ html{
     margin: 0 auto;
 }
 header{
+    background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0.7)),to(rgba(0, 0, 0, 0.7))),url(img/hero.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url(img/hero.jpg);
     height: 100vh;
     background-size: cover;
@@ -84,6 +86,7 @@ a{
     text-decoration: none;
     border-bottom: 1px solid #e67e22;
     padding-bottom: 2px;
+    -webkit-transition: border-bottom 0.3s , color 0.3s;
     transition: border-bottom 0.3s , color 0.3s;
 }
 a:hover,
@@ -106,6 +109,7 @@ a:active{
     width: 1140px;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50% ,-50%);
     transform: translate(-50% ,-50%);
 }
 .btn,
@@ -116,6 +120,7 @@ input[type=submit]{
     text-decoration: none;
     border: 1px solid #e67e22; 
     border-radius: 100px;
+    -webkit-transition: background-color 0.2s,border 0.2s,color 0.2s;
     transition: background-color 0.2s,border 0.2s,color 0.2s;
 }
 .btn-full,
@@ -148,11 +153,18 @@ input[type=submit]:active{
     color: #fff;
 }
 
-.logo {
+.logo{
     height:100px;
     width:auto;
     float:left;
     margin-top: 20px;
+}
+.logo-black{
+    display: none;
+     height:50px;
+    width:auto;
+    float:left;
+    margin: 5px 0;
 }
 
 .main-nav {
@@ -171,7 +183,32 @@ input[type=submit]:active{
     text-transform: uppercase;
     font-size:90%;
     border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
     transition: border-bottom 0.2s;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    color: #555;
+    box-shadow: 0 2px 2px #e8e8e8;
+    z-index: 9999;
+    
+}
+.sticky .main-nav{
+    margin-top: 18px;
+}
+.sticky .main-nav li a{
+    padding: 16px 0;
+    color: #555;
+}
+.sticky .logo{display: none;}
+.sticky .logo-black{
+    display: block;
+    
 }
 .main-nav li a:hover,
 .main-nav li a:active {
@@ -219,11 +256,16 @@ input[type=submit]:active{
     opacity: 0.7;
     width: 100%;
     height: auto;
+    -webkit-transform: scale(1.15);
     transform: scale(1.15);
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, -webkit-transform 0.5s;
     transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
 }
 .meals-photo img:hover{
     opacity: 1;
+    -webkit-transform: scale(1.04);
     transform: scale(1.04);
 }
 
@@ -295,6 +337,7 @@ input[type=submit]:active{
 }
 
 .section-testimonials {
+    background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0.8)),to(rgba(0, 0, 0, 0.8))),url(img/back-customers.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)),url(img/back-customers.jpg);
     background-size: cover;
     color: #fff;
@@ -339,6 +382,7 @@ cite img{
     border-radius: 5px;
     width: 90%;
     margin: 5% auto;
+    -webkit-box-shadow: 0px 5px 2px #c1c1c1;
     box-shadow: 0px 5px 2px #c1c1c1;
 }
 .plan-box div{
@@ -438,6 +482,7 @@ footer p{
     text-decoration: none;
     border: 0;
     color: #888;
+    -webkit-transition: color 0.2s;
     transition: color 0.2s;
 }
 
@@ -455,6 +500,7 @@ footer p{
 .ion-social-twitter,
 .ion-social-googleplus,
 .ion-social-instagram{
+    -webkit-transition: color 0.2s;
     transition: color 0.2s;
 }
 
@@ -473,4 +519,22 @@ footer p{
 
 .btn-app {
     border: 0;
+}
+
+.js--wp-1,
+.js--wp-2,
+.js--wp-3{
+    opacity: 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+.js--wp-4{
+     -webkit-animation-duration: 1s;
+     animation-duration: 1s;
+}
+
+.js--wp-1.animated,
+.js--wp-2.animated,
+.js--wp-3.animated {
+    opacity: 1;
 }
